@@ -1,16 +1,17 @@
-
 var firebaseConfig = {
-      apiKey: "AIzaSyDEYWnTeB4u-y74ctkm5cAgcfO8K8RgKFA",
-      authDomain: "social-website-bffd6.firebaseapp.com",
-      databaseURL: "https://social-website-bffd6-default-rtdb.firebaseio.com",
-      projectId: "social-website-bffd6",
-      storageBucket: "social-website-bffd6.appspot.com",
-      messagingSenderId: "623826508745",
-      appId: "1:623826508745:web:d4fdc753f850caf1596618"
-};
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+      apiKey: "AIzaSyDNVGoVGP2wxTUgwgYjWSzRv6VeapKW_k0",
+      authDomain: "richa-pqke.firebaseapp.com",
+      databaseURL: "https://richa-pqke-default-rtdb.firebaseio.com",
+      projectId: "richa-pqke",
+      storageBucket: "richa-pqke.appspot.com",
+      messagingSenderId: "413588319671",
+      appId: "1:413588319671:web:ba0222be23388da02acc32"
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+user_name = localStorage.getItem("user_name");
+document.getElementById("user_name").innerHTML = "Welcome " + user_name + "!";
 
 function addRoom() {
       room_name = document.getElementById("room_name").value;
@@ -44,4 +45,10 @@ function redirectToRoomName(name) {
       console.log(name);
       localStorage.setItem("room_name", name);
       window.location = "kwitter_page.html";
+}
+
+function logout() {
+      localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
+      window.location.replace("index.html");
 }
